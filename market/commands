@@ -1,0 +1,10 @@
+#dentro de la carpeta en la terminal corro python
+>>> from market import db
+>>> db.create_all()
+>>> from market import Item
+>>> item1 = Item(name="Iphone 10", price=500, barcode='123456012365', description='desc')
+item2 = Item(name="Iphone 11", price=501, barcode='123456012364', description='descripcion2')
+>>> db.session.add(item1)
+>>> db.session.commit()
+>>> Item.query.all()
+[<Item 1>]
